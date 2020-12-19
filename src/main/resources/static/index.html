@@ -11,14 +11,14 @@
 <body>
 <div class="container">
     <p class="h3">Rejestracja użytkownika:</p>
-    <form class="row g-3">
+    <form class="row g-3" action="/add">
         <div class="m-2"></div>
 
         <div class="col-md-1 text-end p-1">
             <label for="inputName" class="form-label">Imię</label>
         </div>
         <div class="col-md-6">
-            <input type="text" class="form-control" id="inputName" placeholder="Wpisz imię" minlength="2" required>
+            <input type="text" class="form-control" id="inputName" placeholder="Wpisz imię" name="imie" minlength="2" required>
         </div>
         <div class="col-md-5"></div>
 
@@ -26,7 +26,7 @@
             <label for="inputSurname" class="form-label">Nazwisko</label>
         </div>
         <div class="col-md-6">
-            <input type="text" class="form-control" id="inputSurname" placeholder="Wpisz nazwisko" minlength="2" required>
+            <input type="text" class="form-control" id="inputSurname" placeholder="Wpisz nazwisko" name="nazwisko" minlength="2" required>
         </div>
         <div class="col-md-5"></div>
 
@@ -34,7 +34,7 @@
             <label for="inputAge" class="form-label">Wiek:</label>
         </div>
         <div class="col-md-6">
-            <input type="text" class="form-control" id="inputAge" placeholder="XXX" pattern="[0-9]{0,3}" required>
+            <input type="text" class="form-control" id="inputAge" name="wiek" placeholder="XXX" pattern="[0-9]{0,3}" required>
         </div>
         <div class="col-md-5"></div>
 

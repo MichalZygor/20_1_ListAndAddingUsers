@@ -1,7 +1,5 @@
 package pl.slask.ovo.listandaddingusers.git.demo;
 
-import org.springframework.context.annotation.Conditional;
-import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,20 +34,23 @@ public class WebController {
                 + "            <td>" + user1.getLastName() + "</td>\n"
                 + "            <td>" + user1.getAge() + "</td>\n"
                 + "        </tr>\n";
+            i++;
         }
         //return "users.html";
         return CodeSupport.getUserTableTopPart() + result + CodeSupport.getUserTableBottomPart();
     }
 
-    @ResponseBody
-    @RequestMapping("/a")
-    public String addUser(@RequestParam(name = "imie", required = false) String name,
-                          @RequestParam(name = "nazwisko", required = false) String lastName,
-                          @RequestParam(name = "wiek", required = false) Integer age) {
-        // /add?imie=Daniel&nazwisko=Abacki&wiek=15
-        return "cześć " + name + " " + lastName + ", masz lat " + age;
+
+    @RequestMapping("/add")
+    public String addUser(@RequestParam(name = "imie", defaultValue = "") String name,
+                          @RequestParam(name = "nazwisko", required = false, defaultValue = "No-Name") String lastName,
+                          @RequestParam(name = "wiek", required = false, defaultValue = "-1") Integer age) {
+
+        if (name.length() < 2) {
+            return "redirect:/err.html";
+        } else {
+            userRepository.add(new User(name, lastName, age));
+            return "redirect:/success.html";
+        }
     }
-
-
-
 }
