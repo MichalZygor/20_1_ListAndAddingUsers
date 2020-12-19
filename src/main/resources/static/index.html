@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Formularz do przeprowadzenia rejestracji użytkownika">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rejestracja użytkownika</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <p class="h3">Rejestracja użytkownika:</p>
+    <form class="row g-3" action="/add">
+        <div class="m-2"></div>
+
+        <div class="col-md-1 text-end p-1">
+            <label for="inputName" class="form-label">Imię</label>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="inputName" placeholder="Wpisz imię" name="imie" minlength="2" required>
+        </div>
+        <div class="col-md-5"></div>
+
+        <div class="col-md-1 text-end p-1">
+            <label for="inputSurname" class="form-label">Nazwisko</label>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="inputSurname" placeholder="Wpisz nazwisko" name="nazwisko" minlength="2" required>
+        </div>
+        <div class="col-md-5"></div>
+
+        <div class="col-md-1 text-end p-1">
+            <label for="inputAge" class="form-label">Wiek:</label>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="inputAge" name="wiek" placeholder="XXX" pattern="[0-9]{0,3}" required>
+        </div>
+        <div class="col-md-5"></div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Rejestruj</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
